@@ -19,6 +19,8 @@ Gem5在IEW stage实现指令的Dispatch、Issue、Execute和WriteBack功能，�
 O3CPU实现时，将pipeline、resource和lower level CPU代码部分的代码实现为指令无关。ISA相关的代码实现ISA相关的逻辑：
 > The lower level CPU, the FullO3CPU, handles orchestrating all of the pipeline stages and handling other ISA-independent actions. We hope this separation makes it easier to implement future ISAs, as hopefully only the high level classes will have to be redefined.
 
+但是在最新的gem5中，已经将架构相关的实现放到了src/arch/<arch>目录下，O3CPU的运行仅依赖O3CPUImpl特化FullO3CPU。
+
 ## 代码实现
 ### 计算类指令
 
