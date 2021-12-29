@@ -29,3 +29,9 @@ O3CPU实现时，将pipeline、resource和lower level CPU代码部分的代码�
 ### 分支预测错误
 
 ### 数据相关性检查
+
+## Fetch调用堆栈和关键信息
+
+在Fetch时已经调用了Decoder::Decode进行译码，其中Decoder是ISA-dependent的RiscvISA，在这一步骤中得到StaticInstPtr，并使用该StaticInstr构建DynamicInstr对象。
+
+![image-20211219180134938](/home/zhong/.config/Typora/typora-user-images/image-20211219180134938.png)
